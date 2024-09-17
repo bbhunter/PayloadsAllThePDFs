@@ -4,6 +4,8 @@
 
 A list of crafted malicious PDF files to test the security of PDF readers and tools.</br>
 
+**Blogpost:** [JavaScript-based PDF Viewers, Cross Site Scripting, and PDF files](https://gubello.me/blog/pdf-viewers-xss-and-pdf-files/)
+
 ### Vulnerabilities found
 
 - [Foxit PDF SDK For Web](https://www.npmjs.com/package/@foxitsoftware/foxit-pdf-sdk-for-web-library) 7.5.0 (~600 weekly downloads)
